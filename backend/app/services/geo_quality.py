@@ -5,10 +5,11 @@ import time
 from typing import Any
 
 from app.services.base import BaseModuleService
+from app.services.quality_workflow import QualityWorkflowMixin
 from app.store import store
 
 
-class GeoQualityService(BaseModuleService):
+class GeoQualityService(QualityWorkflowMixin, BaseModuleService):
     MODULE = "geo_quality"
     ENTITY = "质量报告"
     OPERATION_TERM = "校验"
